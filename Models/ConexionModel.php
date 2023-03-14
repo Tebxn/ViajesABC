@@ -1,14 +1,16 @@
 <?php
 
-$usuario = 'System';
-$pass = 'root';
-$cadenaConexion = 'localhost/ViajesABC';
 
-    function conectar_Oracle( $usuario, $pass, $cadenaConexion )
+    function conectar_Oracle()
     {
-        // Conectar con Oracle:
-         $conexion = oci_connect($usuario, $pass, $cadenaConexion) or die ( "Error al conectar : ".oci_error() );
-        return $conexion;
+        $conn = oci_connect('System', 'root', '//localhost/ViajesABC');
+        if (!$conn) {
+            $e = oci_error();
+            trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+        }else{
+            echo 'Conexion exitosa';
+        }
+
     }
 
     function conectar_Oracle2( $usuario, $pass, $cadenaConexion )

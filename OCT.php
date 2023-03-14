@@ -1,5 +1,17 @@
 <?php
-    include '../Controllers/ConexionController.php';
+    //include '../Controllers/ConexionController.php';
+    function conectar_Oracle()
+    {
+        $conn = oci_connect('System', 'root', '//localhost/XE');
+        if (!$conn) {
+            $e = oci_error();
+            trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+        }else{
+            echo 'Conexion exitosa';
+        }
+
+    }
+    conectar_Oracle();
 ?>
 
 <!DOCTYPE html>
