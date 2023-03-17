@@ -1,5 +1,7 @@
 <?php
 
+//Metodo para conectar a la base de datos.
+
 function conectar() {
     $usuario = 'System';
     $password = 'root';
@@ -13,11 +15,20 @@ function conectar() {
     return $conn;
 }
 
+//Metodo para desconectar de la base de datos.
+
 function desconectar($conn) {
     oci_close($conn);
 }
 
-function insertar_persona($nombre, $edad) {
+//-------------------INICIO Metodos de ejemplo de llamado y uso de una funcion que ejecuta algo en oracle-----------------
+
+if(isset($_POST["btnTest"]))
+{
+  insertar_persona('Esteban', '22');
+}
+
+function insertar_persona($nombre, $edad) { //De ejemplo
     $conn = conectar();
     $sql = "INSERT INTO persona (nombre, edad) VALUES (:nombre, :edad)";
     $stmt = oci_parse($conn, $sql);
@@ -28,6 +39,17 @@ function insertar_persona($nombre, $edad) {
     oci_free_statement($stmt);
     desconectar($conn);
 }
+//-------------------FIN Metodos de ejemplo de llamado y uso de una funcion que ejecuta algo en oracle-----------------
+
+
+
+
+
+
+
+
+
+
 
 ?>
 

@@ -1,5 +1,5 @@
 <?php
-    include 'Controllers/ConexionController.php';
+    include 'Models/ConexionModel.php';
 
 ?>
 
