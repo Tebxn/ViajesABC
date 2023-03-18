@@ -21,7 +21,7 @@ if(isset($_POST["btnIniciarSesion"]))
             $_SESSION['email'] = $email;
     
             // Se redirige a la página principal
-            header('Location: ../Views/index.php');
+            header('Location: ../Views/Home.php');
             exit();
         } else {
             // Se muestra un mensaje de error
@@ -29,5 +29,11 @@ if(isset($_POST["btnIniciarSesion"]))
             echo 'Email o contraseña incorrectos';
             }
         }
+}
+
+if(isset($_POST["btnCerrarSesion"]))
+{
+    session_destroy();
+    header("Location: ../Views/Login.php");
 }
 ?>
