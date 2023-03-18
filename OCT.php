@@ -1,5 +1,6 @@
 <?php
-    include 'Models/ConexionModel.php';
+    include_once 'Models/ConexionModel.php';
+    include_once 'Controllers/AutenticacionController.php';
 
 ?>
 
@@ -21,5 +22,34 @@
             <input type="submit" class="btn btn-primary btn-block" id="btnTest" name="btnTest" value="Test"/>
         </div>
     </form>
+
+    <form action="" method="post">
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Correo Electronico" 
+          id="email" name="email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Contraseña" 
+          id="contrasena" name="contrasena">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+
+            <input type="submit" class="btn btn-primary btn-block" 
+            id="btnIniciarSesion" name="btnIniciarSesion" value="Iniciar Sesion"/>
+
+          </div>
+        </div>
+      </form>
 </body>
 </html>
