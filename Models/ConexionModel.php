@@ -3,9 +3,9 @@
 //Metodo para conectar a la base de datos.
 
 function conectar() {
-    $usuario = 'System';
-    $password = 'root';
-    $baseDatos = '//localhost/XE';
+    $usuario = 'ViajesABC';
+    $password = 'AdminSQL123';
+    $baseDatos = '//localhost/ViajesABC';
 
     $conn = oci_connect($usuario, $password, $baseDatos);
     if (!$conn) {
@@ -52,4 +52,3 @@ function insertar_persona($nombre, $edad) { //De ejemplo
 
 
 ?>
-
