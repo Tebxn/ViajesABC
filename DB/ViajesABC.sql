@@ -110,10 +110,19 @@ BEGIN
     WHERE email = pe_email AND contrasena = pe_contrasena;
     
     IF SQL%FOUND AND p_estado = 1 THEN
-        p_resultado := 1; -- Inicio de sesión exitoso
+        p_resultado := 1; -- Inicio de sesiÃ³n exitoso
     ELSE
-        p_resultado := 0; -- Inicio de sesión fallido
+        p_resultado := 0; -- Inicio de sesiÃ³n fallido
     END IF;
+END;
+
+CREATE OR REPLACE PROCEDURE ELIMINAR_USUARIO(
+    pe_email IN VARCHAR2,
+) AS
+BEGIN
+    DELETE
+    FROM Usuario
+    WHERE email = pe_email;
 END;
 
 ---insert de prueba
