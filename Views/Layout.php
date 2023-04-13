@@ -10,7 +10,7 @@
     //esto no funciona al 100%, deberia si la variable de sesion es diferente a vacia mostrar el header de visitante y si esta llena mostrar el de cliente o admin
     function mostrarNavbar()
     {
-        if($_SESSION['email'] == null)
+        if(session_status() == PHP_SESSION_ACTIVE)
         {
             echo '
             <div class="container-fluid bg-light pt-3 d-none d-lg-block">
@@ -73,6 +73,10 @@
                                 </div>
                                 <a href="contact.php" class="nav-item nav-link">Contactenos</a>
                                 <a href="Login.php" class="nav-item nav-link">Login</a>
+                                <form action="" method="post">
+                                    <input type="submit" class="nav-item nav-link" id="btnCerrarSesion" name="btnCerrarSesion" value="Cerrar Sesion"
+                                    style="background-color: transparent; border: 0px;"/>
+                                </form>
                             </div>
                         </div>
                     </nav>

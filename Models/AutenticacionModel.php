@@ -6,7 +6,7 @@
         $conn = conectar();
     
         // Se prepara la llamada al procedimiento almacenado
-        $stmt = oci_parse($conn, 'BEGIN INICIAR_SESION(:pe_email, :pe_contrasena, :p_consecutivo, :p_nombre, :p_estado, :p_tipo_usuario, :p_resultado); END;');
+        $stmt = oci_parse($conn, 'BEGIN INICIAR_SESION(:pe_email, :pe_contrasena, :p_consecutivo, :p_nombre, :p_estado, :p_tipo_usuario, :p_resultado, :s_email); END;');
     
         // Se definen los parámetros de entrada y salida
         oci_bind_by_name($stmt, ':pe_email', $email);
@@ -16,6 +16,7 @@
         oci_bind_by_name($stmt, ':p_estado', $estado, 10);
         oci_bind_by_name($stmt, ':p_tipo_usuario', $tipoUsuario, 1);
         oci_bind_by_name($stmt, ':p_resultado', $resultado, 10);
+        oci_bind_by_name($stmt, ':s_email', $s_email, 70);
     
         // Se ejecuta el procedimiento almacenado
         oci_execute($stmt);
