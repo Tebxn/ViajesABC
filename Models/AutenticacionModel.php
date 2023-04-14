@@ -6,12 +6,12 @@
         $conn = conectar();
     
         // Se prepara la llamada al procedimiento almacenado
-        $stmt = oci_parse($conn, 'BEGIN INICIAR_SESION(:pe_email, :pe_contrasena, :p_consecutivo, :p_nombre, :p_estado, :p_tipo_usuario, :p_resultado, :s_email); END;');
+        $stmt = oci_parse($conn, 'BEGIN INICIAR_SESION(:pe_email, :pe_contrasena, :usuario_id, :p_nombre, :p_estado, :p_tipo_usuario, :p_resultado, :s_email); END;');
     
         // Se definen los parámetros de entrada y salida
         oci_bind_by_name($stmt, ':pe_email', $email);
         oci_bind_by_name($stmt, ':pe_contrasena', $contrasena);
-        oci_bind_by_name($stmt, ':p_consecutivo', $consecutivo, 10);
+        oci_bind_by_name($stmt, ':usuario_id', $usuario_id, 10);
         oci_bind_by_name($stmt, ':p_nombre', $nombre, 50);
         oci_bind_by_name($stmt, ':p_estado', $estado, 10);
         oci_bind_by_name($stmt, ':p_tipo_usuario', $tipoUsuario, 1);
@@ -27,7 +27,7 @@
     
         // Se devuelve el resultado del procedimiento almacenado
         if ($resultado == 1) {
-            return array('consecutivo' => $consecutivo, 'nombre' => $nombre, 'estado' => $estado, 'tipoUsuario' => $tipoUsuario);
+            return array('usuario_id' => $usuario_id, 'nombre' => $nombre, 'estado' => $estado, 'tipoUsuario' => $tipoUsuario);
         } else {
             return null;
         }

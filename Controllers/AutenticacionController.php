@@ -14,7 +14,7 @@ if(isset($_POST["btnIniciarSesion"]))
     
         if ($resultado !== null) {
             // Se guarda la información de la sesión en variables de sesión
-            $_SESSION['consecutivo'] = $resultado['consecutivo'];
+            $_SESSION['usuario_id'] = $resultado['usuario_id'];
             $_SESSION['nombre'] = $resultado['nombre'];
             $_SESSION['estado'] = $resultado['estado'];
             $_SESSION['tipoUsuario'] = $resultado['tipo_usuario'];

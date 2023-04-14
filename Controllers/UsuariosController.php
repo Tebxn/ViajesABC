@@ -12,8 +12,8 @@ foreach ($usuarios as $usuario){
         echo '<td>' . $usuario['ESTADO'] . '</td>';
         echo '<td>' . $usuario['TIPO_USUARIO'] . '</td>';
         echo '<td>' . $usuario['NOMBRE'] . '</td>';
-        echo "<td><a href='../Views/actualizarProducto.php?q=" . $usuario['CONSECUTIVO'] . "'>Actualizar</a> | 
-             <a href='' data-toggle='modal' data-target='#miModal' data-id=" . $usuario['CONSECUTIVO'] . ">Inhabilitar</a>
+        echo "<td><a href='../Views/actualizarProducto.php?q=" . $usuario['USUARIO_ID'] . "'>Actualizar</a> | 
+             <a href='' data-toggle='modal' data-target='#miModal' data-id=" . $usuario['USUARIO_ID'] . ">Inhabilitar</a>
              </td>";
     echo '</tr>';
     }

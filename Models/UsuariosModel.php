@@ -5,7 +5,7 @@ function ConsultarUsuariosModel() {
 
     $conn = conectar();
 
-    $query = "SELECT CONSECUTIVO, EMAIL, ESTADO, TIPO_USUARIO, NOMBRE FROM USUARIO";
+    $query = "SELECT USUARIO_ID, EMAIL, ESTADO, TIPO_USUARIO, NOMBRE FROM USUARIO";
     $result = oci_parse($conn, $query);
     oci_execute($result);
 

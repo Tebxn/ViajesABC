@@ -59,7 +59,7 @@
         </table>
         <div class="row">
             <div class="col-2">
-            <a class="btn btn-primary" href="AgregarProducto.php" role="button">Agregar Producto</a>
+            <a class="btn btn-primary" href="AgregarProducto.php" role="button">Agregar Usuario</a>
             </div>
         </div>
         

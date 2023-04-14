@@ -3,8 +3,8 @@
 //Metodo para conectar a la base de datos.
 
 function conectar() {
-    $usuario = 'System'; //'ViajesABC';
-    $password = 'root'; //'AdminSQL123';
+    $usuario = 'ViajesABC';//'System';
+    $password = 'AdminSQL123';//'root'; //;
     $baseDatos = '//localhost/xe';//'localhost/ViajesABC';
 
     $conn = oci_connect($usuario, $password, $baseDatos);
