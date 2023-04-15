@@ -36,7 +36,8 @@
     <?php
         mostrarNavbar();
     ?>
-
+<br>
+<br>
 <div class="">
     <section class="content-header">
       <div class="container-fluid">

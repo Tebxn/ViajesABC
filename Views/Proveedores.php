@@ -45,22 +45,21 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>ID</th>
+                    <th>Nombre Proveedor</th>
                     <th>Email</th>
-                    <th>Nombre</th>
-                    <th>Estado</th>
-                    <th>Tipo Usuario</th>
-                    <th>Acciones</th>
+                    <th>Telefono</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                  ConsultarUsuarios();
+                //  ConsultarUsuarios();
                 ?>
             </tbody>
         </table>
         <div class="row">
             <div class="col-2">
-            <a class="btn btn-primary" href="AgregarUsuario.php" role="button">Agregar Usuario</a>
+            <a class="btn btn-primary" href="AgregarActividad.php" role="button">Agregar Actividad</a>
             </div>
         </div>
         

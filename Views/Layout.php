@@ -59,16 +59,16 @@
                             <div class="navbar-nav ml-auto py-0">
                                 <a href="home.php" class="nav-item nav-link active">Inicio</a>
                                 <a href="about.php" class="nav-item nav-link">Sobre Nosotros</a>
-                                <a href="service.php" class="nav-item nav-link">Servicios</a>
-                                <a href="package.php" class="nav-item nav-link">Paquetes de tour</a>
+                                
                                 <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Servicios</a>
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Servicios (Admin)</a>
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
+                                    
+                                        <a href="Usuarios.php" class="dropdown-item">Usuarios</a>
                                         <a href="Actividades.php" class="dropdown-item">Actividades</a>
-                                        <a href="single.php" class="dropdown-item">Transporte</a>
-                                        <a href="destination.php" class="dropdown-item">Tours</a>
-                                        <a href="guide.php" class="dropdown-item">Guias al viajero</a>
-                                        <a href="testimonial.php" class="dropdown-item">Testimonios</a>
+                                        <a href="Transporte.php" class="dropdown-item">Transporte</a>
+                                        <a href="package.php" class="dropdown-item">Tours</a>
+                                      
                                     </div>
                                 </div>
                                 <a href="contact.php" class="nav-item nav-link">Contactenos</a>

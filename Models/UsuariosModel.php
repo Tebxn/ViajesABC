@@ -21,6 +21,29 @@ function ConsultarUsuariosModel() {
 
 }
 
+function ConsultarUsuarioModel() {
+
+    $conn = conectar();
+
+    $cursor = oci_new_cursor($conn);
+
+    $stmt = oci_parse($conn, "BEGIN ConsultarUsuario(:pUSUARIO_ID, :pCursor); END;");
+    oci_bind_by_name($stmt, ":pUSUARIO_ID", $USUARIO_ID);
+    oci_bind_by_name($stmt, ":pCursor", $cursor, -1, OCI_B_CURSOR);
+    oci_execute($stmt);
+    oci_execute($cursor);
+
+    $usuario = oci_fetch_array($cursor, OCI_ASSOC);
+
+    oci_free_statement($stmt);
+    oci_free_statement($cursor);
+    oci_close($conn);
+
+    return $usuario;
+
+}
+
+
 function CrearUsuarioModel($email, $contrasena, $nombre, $tipoUsuario) {
     // Se establece la conexión a la base de datos
     $conn = conectar();
@@ -40,6 +63,24 @@ function CrearUsuarioModel($email, $contrasena, $nombre, $tipoUsuario) {
     // Se liberan los recursos
     oci_free_statement($stmt);
     oci_close($conn);
+}
+
+function ActualizarUsuarioModel($usuario_id, $nombre, $perfil, $contrasena)
+
+{
+    $conn = conectar();
+    $stmt = oci_parse($conn, "BEGIN actualizar_usuario(:pUSUARIO_ID, :pNombre, :pPerfil, :pContrasena); END;");
+
+    oci_bind_by_name($stmt, ':pUSUARIO_ID', $usuario_id);
+    oci_bind_by_name($stmt, ':pNombre', $nombre, 255);
+    oci_bind_by_name($stmt, ':pPerfil', $perfil, 1);
+    oci_bind_by_name($stmt, ':pContrasena', $contrasena, 255);
+
+    oci_execute($stmt);
+
+    oci_free_statement($stmt);
+    oci_close($conn);
+
 }
 
 ?>
