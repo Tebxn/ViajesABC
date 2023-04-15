@@ -62,11 +62,11 @@
                                 <a href="service.php" class="nav-item nav-link">Servicios</a>
                                 <a href="package.php" class="nav-item nav-link">Paquetes de tour</a>
                                 <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Paginas</a>
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Servicios</a>
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
-                                        <a href="blog.php" class="dropdown-item">Blog</a>
-                                        <a href="single.php" class="dropdown-item">Detalles de blog</a>
-                                        <a href="destination.php" class="dropdown-item">Destinos</a>
+                                        <a href="Actividades.php" class="dropdown-item">Actividades</a>
+                                        <a href="single.php" class="dropdown-item">Transporte</a>
+                                        <a href="destination.php" class="dropdown-item">Tours</a>
                                         <a href="guide.php" class="dropdown-item">Guias al viajero</a>
                                         <a href="testimonial.php" class="dropdown-item">Testimonios</a>
                                     </div>
