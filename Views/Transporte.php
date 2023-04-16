@@ -1,6 +1,6 @@
 <?php
     include_once 'Layout.php';
-    include_once '../Controllers/UsuariosController.php';
+    include_once '../Controllers/TransportesController.php';
 ?>
 
 <!DOCTYPE html>
@@ -45,21 +45,20 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre Transporte</th>
+                    <th>Nombre</th>
                     <th>Email</th>
                     <th>Telefono</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                //  ConsultarUsuarios();
+                  ConsultarTransportes();
                 ?>
             </tbody>
         </table>
         <div class="row">
             <div class="col-2">
-            <a class="btn btn-primary" href="AgregarActividad.php" role="button">Agregar Actividad</a>
+            <a class="btn btn-primary" href="AgregarActividad.php" role="button">Agregar Transporte</a>
             </div>
         </div>
         

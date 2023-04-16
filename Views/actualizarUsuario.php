@@ -2,6 +2,7 @@
     include_once 'Layout.php';
     include_once '../Controllers/UsuariosController.php';
 
+    $datos = ConsultarUsuario($_GET["q"]);
    
 ?>
 
@@ -39,40 +40,53 @@
         mostrarNavbar();
     ?>
 
-<?php
- 
- $datos = ConsultarUsuario($_GET["q"]);
- ?>
-<div class="">
+<div class="container">
     <section class="content-header">
       <div class="container-fluid">
       <section class="py-5 my-5">
-        <div class="container">
+      
       <div class="bg-white shadow rounded-lg d-block d-sm-flex">
-                <div class="tab-content p-5 p-md-5" id="v-pills-tabContent">
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
                         <h3 class="mb-4">Actualizar Usuario</h3>
                         <form action="" method="post">
-                        
+                    <div class="container">    
+                        <input type="hidden" id="usuario_id" name="usuario_id"
+                                value="<?php echo $datos["USUARIO_ID"] ?>" >
 
-                        <div class="row">
-                                <div class="col-md-4">
+                            <div class="row">
+
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nombre</label>
                                         <input type="text" class="form-control" id="nombre"
-                                            name="nombre">
+                                            name="nombre" value="<?php echo $datos["NOMBRE"] ?>">
                                            
                                     </div>
                                 </div>
-                               
-                            </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Correo Electronico</label>
+                                            <input type="email" class="form-control" id="email"
+                                            name="email" readOnly="true" value="<?php echo $datos["EMAIL"] ?>" >
+                                    </div>
+                                </div>
+                         </div>
 
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tipo Usuario</label>
                                         <input type="text" class="form-control" id="perfil"
-                                            name="perfil">
+                                            name="perfil" readOnly="true" value="<?php echo $datos["ROL"] ?>">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" id="usuario_id"
+                                            name="usuario_id" value="<?php echo $datos["USUARIO_ID"] ?>">
                                            
                                     </div>
                                 </div>
@@ -80,34 +94,16 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>ID Usuario</label>
-                                        <input type="text" class="form-control" id="usuario_id"
-                                            name="usuario_id">
-                                           
-                                    </div>
-                                </div>
-                               
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Correo Electronico</label>
-                                            <input type="email" class="form-control" value="" id="email"
-                                            name="email"  >
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Contraseña</label>
                                         <input type="password" class="form-control" value="" id="contrasena"
                                             name="contrasena" >
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            
+
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Confirmar Contraseña</label>
                                         <input type="password" class="form-control" value="" id="contrasena_confirma"
@@ -118,27 +114,31 @@
 
 
                     </div>
+                    <br>
+
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block" id="btnActualizarUsuario"
                                     name="btnActualizarUsuario" value="Actualizar" />
-
                             </div>
                         </div>
-                        <div class="col-md-2">
+
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <a class="btn btn-light" href="Usuarios.php" role="button">Cancelar</a>
                             </div>
                         </div>
                     </div>
-                    </form>
+                </form>
                 </div>
             </div>
         
       </div>
     </section>
   </div>
+
+  
 
     <?php
         mostrarFooter();

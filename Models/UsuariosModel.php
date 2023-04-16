@@ -1,5 +1,6 @@
 <?php
 include_once 'ConexionModel.php';
+include_once '../Controllers/UsuariosController.php';
 
 function ConsultarUsuariosModel() {
 
@@ -21,7 +22,7 @@ function ConsultarUsuariosModel() {
 
 }
 
-function ConsultarUsuarioModel() {
+function ConsultarUsuarioModel($USUARIO_ID) {
 
     $conn = conectar();
 
@@ -33,7 +34,9 @@ function ConsultarUsuarioModel() {
     oci_execute($stmt);
     oci_execute($cursor);
 
+
     $usuario = oci_fetch_array($cursor, OCI_ASSOC);
+
 
     oci_free_statement($stmt);
     oci_free_statement($cursor);
