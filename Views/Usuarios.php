@@ -73,6 +73,38 @@
     ?>
 
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Inactivar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Desea inactivar el usuario?
+        <input type="text" id="IdModal" data-id="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="InactivarUsuario();" class="btn btn-primary" id="inactivarBtn" name="inactivarBtn">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$('#exampleModal').modal().on('shown.bs.modal', function (e) {
+
+var myDataId = $(e.relatedTarget).attr('data-id'); 
+$("#IdModal").val(myDataId);
+
+});
+
+</script>
+
+
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -81,6 +113,7 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="javascripts/funcionesInactivarUsuario.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
