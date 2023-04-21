@@ -8,7 +8,7 @@ if(isset($_POST["btnIniciarSesion"]))
     $contrasena = $_POST['contrasena'];
     
     // Se valida que se hayan enviado ambos campos
-    if (!empty($email) && !empty($contrasena)) {
+    if (!empty($email) && !empty($contrasena)) { 
         // Se llama al modelo para iniciar sesión
         $resultado = iniciarSesionModel($email, $contrasena);
     
