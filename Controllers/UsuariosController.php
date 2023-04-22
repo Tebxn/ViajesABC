@@ -56,7 +56,7 @@ $respuesta = ActualizarUsuarioModel($usuario_id, $nombre, $perfil, $contrasena);
     
     if($respuesta == true)
     {
-        header("Location: ../Views/usuarios.php");
+        header("Location: ../Views/Usuarios.php");
     }
 }
 

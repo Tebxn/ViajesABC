@@ -63,5 +63,34 @@ function ActualizarTransporteModel($TRANSPORTE_ID, $NOMBRE, $EMAIL, $TELEFONO)
 
 }
 
+function EliminarTransporteModel($TRANSPORTE_ID) {
+
+    $conn = conectar();
+
+    $stmt = oci_parse($conn, "BEGIN eliminar_transporte(:pTRANSPORTE_ID); END;");
+    oci_bind_by_name($stmt, ":pTRANSPORTE_ID", $TRANSPORTE_ID);
+    oci_execute($stmt);
+    oci_free_statement($stmt);
+    oci_close($conn);
+}
+
+
+function CrearTransporteModel($NOMBRE, $EMAIL, $TELEFONO) {
+  
+    $conn = conectar();
+
+    $stmt = oci_parse($conn, 'BEGIN INSERTAR_TRANSPORTE(:pNOMBRE, :pEMAIL,:pTELEFONO); END;');
+
+    oci_bind_by_name($stmt, ':pNOMBRE', $NOMBRE, 70);
+    oci_bind_by_name($stmt, ':pEMAIL', $EMAIL, 30);
+    oci_bind_by_name($stmt, ':pTELEFONO', $TELEFONO, 255);
+
+
+    oci_execute($stmt);
+    
+    oci_free_statement($stmt);
+    oci_close($conn);
+}
+
 
 ?>
