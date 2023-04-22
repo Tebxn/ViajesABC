@@ -60,7 +60,7 @@
                                     <div class="form-group">
                                         <label>Nombre</label>
                                         <input type="text" class="form-control" id="nombre"
-                                            name="nombre" value="<?php echo $datos["NOMBRE"] ?>">
+                                            name="nombre" value="<?php echo $datos["NOMBRE_TRANSPORTE"] ?>">
                                            
                                     </div>
                                 </div>

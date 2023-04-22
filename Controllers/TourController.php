@@ -76,12 +76,12 @@ if(isset($_POST["btnActualizarTour"]))
     
     $TOUR_ID = $_POST["tour_id"];
     $NOMBRE_TOUR = $_POST["nombre"];
-    $PROVEEDOR = $_POST["proveedor"];
-    $PROVINCIA = $_POST["provincia"];
-    $TRANSPORTE = $_POST["transporte"];
+    $PROVEEDOR = $_POST["proveedor_id"];
+    $PROVINCIA = $_POST["provincia_id"];
+    $TRANSPORTE = $_POST["transporte_id"];
     $FECHA = $_POST["fecha"];
-    $ACTIVIDAD = $_POST["actividad"];
-    $DIRECCION = $_POST["direccion"];
+    $ACTIVIDAD = $_POST["actividad_id"];
+    $DIRECCION = $_POST["direccion_id"];
 
 $respuesta = ActualizarTourModel($TOUR_ID, $NOMBRE_TOUR,$PROVEEDOR,$PROVINCIA,$TRANSPORTE, $FECHA, $ACTIVIDAD, $DIRECCION );
     
@@ -102,12 +102,12 @@ if(isset($_POST["btnAgregarTour"]))
 {
     $TOUR_ID = $_POST["tour_id"];
     $NOMBRE_TOUR = $_POST["nombre"];
-    $PROVEEDOR = $_POST["proveedor"];
-    $PROVINCIA = $_POST["provincia"];
-    $TRANSPORTE = $_POST["transporte"];
+    $PROVEEDOR = $_POST["proveedor_id"];
+    $PROVINCIA = $_POST["provincia_id"];
+    $TRANSPORTE = $_POST["transporte_id"];
     $FECHA = $_POST["fecha"];
-    $ACTIVIDAD = $_POST["actividad"];
-    $DIRECCION = $_POST["direccion"];
+    $ACTIVIDAD = $_POST["actividad_id"];
+    $DIRECCION = $_POST["direccion_id"];
 
     $respuesta = CrearTourModel($TOUR_ID, $NOMBRE_TOUR,$PROVEEDOR,$PROVINCIA,$TRANSPORTE, $FECHA, $ACTIVIDAD, $DIRECCION);
 

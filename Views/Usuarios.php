@@ -45,7 +45,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Id Usuario</th>
                     <th>Correo Electronico</th>
                     <th>Nombre</th>
                     <th>Estado</th>
