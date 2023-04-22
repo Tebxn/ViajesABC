@@ -1,6 +1,9 @@
 <?php
     include_once 'Layout.php';
     include_once '../Controllers/ActividadesController.php';
+
+    $datos = ConsultarActividad($_GET["q"]);
+   
 ?>
 
 <!DOCTYPE html>
@@ -36,40 +39,58 @@
     <?php
         mostrarNavbar();
     ?>
-<br>
-<br>
-<div class="">
+
+<div class="container">
     <section class="content-header">
       <div class="container-fluid">
+      <section class="py-5 my-5">
+      
+      <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+                        <form action="" method="post">
+                    <div class="container">    
+                    <h5 class="mb-4">¿Desea eliminar la siguiente actividad?</h5>
+                        <input type="hidden" id="actividad_id" name="actividad_id"
+                                value="<?php echo $datos["ACTIVIDAD_ID"] ?>" >
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nombre Actividad</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                  ConsultarActividades();
-                ?>
-            </tbody>
-        </table>
-        <div class="row">
-            <div class="col-2">
-            <a class="btn btn-primary" href="AgregarActividad.php" role="button">Agregar Actividad</a>
+                            <div class="row">
+
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label>Nombre</label>
+                                        <input type="text" class="form-control" id="nombre"
+                                            name="nombre" value="<?php echo $datos["NOMBRE"] ?>">
+                                           
+                                    </div>
+                                </div>
+                                
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-block" id="btnEliminarActividad"
+                                    name="btnEliminarActividad" value="Eliminar" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <a class="btn btn-light" href="Actividades.php" role="button">Cancelar</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
             </div>
-        </div>
         
       </div>
     </section>
   </div>
 
-    <?php
-        mostrarFooter();
-    ?>
+  
+
+   
 
 
     <!-- JavaScript Libraries -->

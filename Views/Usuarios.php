@@ -45,11 +45,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Email</th>
+                    <th>Id Usuario</th>
+                    <th>Correo Electronico</th>
                     <th>Nombre</th>
                     <th>Estado</th>
                     <th>Tipo Usuario</th>
-                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>

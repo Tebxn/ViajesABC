@@ -21,6 +21,7 @@ function ConsultarUsuariosModel() {
     return $usuarios;
 }
 
+
 function ConsultarUsuarioModel($USUARIO_ID) {
 
     $conn = conectar();
