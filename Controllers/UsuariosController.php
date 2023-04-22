@@ -13,7 +13,7 @@ foreach ($usuarios as $usuario){
         echo '<td>' . $usuario['ESTADO'] . '</td>';
         echo '<td>' . $usuario['TIPO_USUARIO'] . '</td>';
         echo "<td><a href='../Views/actualizarUsuario.php?q=" . $usuario['USUARIO_ID'] . "'>Actualizar</a> | 
-             <a href='' data-toggle='modal' data-target='#exampleModal' data-id=" . $usuario['USUARIO_ID'] . ">Inhabilitar</a>
+             <a href='../Views/eliminarUsuario.php?q=" . $usuario['USUARIO_ID'] . "'>Eliminar</a>
              </td>";
 
     }
@@ -61,16 +61,13 @@ $respuesta = ActualizarUsuarioModel($usuario_id, $nombre, $perfil, $contrasena);
 }
 
 
-if(isset($_POST["inactivarBtn"]))
-{
-    $USUARIO_ID = $_POST["USUARIO_ID "];
-    
-    $respuesta = InactivarUsuarioModel($USUARIO_ID);
-    
-    if($respuesta == true)
-    {
-        header("Location: ../Views/Login.php");
-    }
+if(isset($_POST["btnEliminarUsuario"])) {
+
+    $USUARIO_ID = $_POST["usuario_id"];
+
+    EliminarUsuarioModel($USUARIO_ID);
+
+    header("Location: ../Views/Usuarios.php");
 }
 
 

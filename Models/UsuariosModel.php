@@ -83,15 +83,13 @@ function ActualizarUsuarioModel($usuario_id, $nombre, $perfil, $contrasena)
 
 }
 
-function InactivarUsuarioModel($USUARIO_ID) {
+function EliminarUsuarioModel($USUARIO_ID) {
 
     $conn = conectar();
 
-    $stmt = oci_parse($conn, "BEGIN Actualizar_Estado_Usuario(:pUSUARIO_ID); END;");
+    $stmt = oci_parse($conn, "BEGIN eliminar_usuario(:pUSUARIO_ID); END;");
     oci_bind_by_name($stmt, ":pUSUARIO_ID", $USUARIO_ID);
-    oci_bind_by_name($stmt, ":pConsecutivo", $pConsecutivo, -1);
     oci_execute($stmt);
-
     oci_free_statement($stmt);
     oci_close($conn);
 }
