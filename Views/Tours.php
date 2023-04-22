@@ -65,8 +65,8 @@
                     <th>Proveedor</th>
                     <th>Provincia</th>
                     <th>Transporte</th>
-                    <th>Fecha Salida</th>
-                    <th>Fecha Llegada</th>
+                    <th>Fecha</th>
+                    <th>Direccion</th>
                    
                    
                 </tr>
@@ -79,7 +79,7 @@
         </table>
         <div class="row">
             <div class="col-2">
-            <a class="btn btn-primary" href="AgregarActividad.php" role="button">Agregar Actividad</a>
+            <a class="btn btn-primary" href="agregarTour.php" role="button">Agregar Tour</a>
             </div>
         </div>
         

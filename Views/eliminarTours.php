@@ -48,82 +48,29 @@
       <div class="bg-white shadow rounded-lg d-block d-sm-flex">
                 <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
-                        <h3 class="mb-4">Actualizar Tour</h3>
                         <form action="" method="post">
                     <div class="container">    
+                    <h5 class="mb-4">¿Desea eliminar el siguiente transporte?</h5>
                         <input type="hidden" id="tour_id" name="tour_id"
                                 value="<?php echo $datos["TOUR_ID"] ?>" >
 
                             <div class="row">
 
-                                <div class="col-md-4">
+                                <div class="col-md-9">
                                     <div class="form-group">
-                                        <label>Nombre Tour</label>
+                                        <label>Nombre</label>
                                         <input type="text" class="form-control" id="nombre"
                                             name="nombre" value="<?php echo $datos["NOMBRE_TOUR"] ?>">
                                            
                                     </div>
-
-                                    <div class="form-group">
-                                        <label>Nombre Actividad</label>
-                                        <input type="text" class="form-control" id="actividad"
-                                            name="actividad" readOnly="true" value="<?php echo $datos["NOMBRE_ACTIVIDAD"] ?>">
-                                           
-                                    </div>
                                 </div>
                                 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Proveedor</label>
-                                            <input type="text" class="form-control" id="proveedor"
-                                            name="proveedor" readOnly="true" value="<?php echo $datos["NOMBRE_PROVEEDOR"] ?>" >
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>TRANSPORTE</label>
-                                            <input type="text" class="form-control" id="transporte"
-                                            name="transporte" readOnly="true" value="<?php echo $datos["NOMBRE_TRANSPORTE"] ?>" >
-                                    </div>
-                                </div>
-                         </div>
-
-                            <div class="row">
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Fecha</label>
-                                            <input type="text" class="form-control" id="fecha"
-                                            name="fecha" value="<?php echo $datos["FECHA"] ?>" >
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Provincia</label>
-                                        <input type="text" class="form-control" id="provincia"
-                                            name="provincia" readOnly="true" value="<?php echo $datos["NOMBRE_PROVINCIA"] ?>">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Direccion</label>
-                                        <input type="text" class="form-control" id="direccion"
-                                            name="direccion"  value="<?php echo $datos["DIRECCION"] ?>">
-                                    </div>
-                                </div>
-                        
-
-
-                    </div>
-                    <br>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-block" id="btnActualizarTour"
-                                    name="btnActualizarTour" value="Actualizar" />
+                                <input type="submit" class="btn btn-primary btn-block" id="btnEliminarTour"
+                                    name="btnEliminarTour" value="Eliminar" />
                             </div>
                         </div>
 
