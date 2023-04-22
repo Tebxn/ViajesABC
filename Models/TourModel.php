@@ -21,7 +21,6 @@ function ConsultarToursModel() {
     oci_close($conn);
 
     return $tours;
-
 }
 
 function ConsultarTourModel($TOUR_ID) {
@@ -49,5 +48,34 @@ function ConsultarTourModel($TOUR_ID) {
 }
 
 
+function ConsultarToursCardsModel() {
 
+    $conn = conectar();
+
+    $query = "SELECT      
+                TOUR_ID,
+                TOUR.NOMBRE_TOUR,
+                PROVINCIA.NOMBRE_PROVINCIA,
+                TOUR.FECHA,
+                ACTIVIDAD.NOMBRE_ACTIVIDAD,
+                TOUR.IMAGENURL
+              FROM TOUR
+              INNER JOIN PROVINCIA ON TOUR.PROVINCIA = PROVINCIA.PROVINCIA_ID
+              INNER JOIN ACTIVIDAD ON TOUR.ACTIVIDAD = ACTIVIDAD.ACTIVIDAD_ID";
+
+    $result = oci_parse($conn, $query);
+    oci_execute($result);
+
+    $tours = array();
+    while ($row = oci_fetch_assoc($result)) {
+        $tours[] = $row;
+    }
+
+    oci_free_statement($result);
+    oci_close($conn);
+
+    return $tours;
+    return $tours;
+
+}
 ?>

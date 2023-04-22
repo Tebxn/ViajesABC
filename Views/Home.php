@@ -48,7 +48,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours Y Viajes</h4>
                             <h1 class="display-3 text-white mb-md-4">Vamos a descubrir lugares asombrosos</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">¡Reserva ahora!</a>
+                            <a href="Viajes.php" class="btn btn-primary py-md-3 px-md-5 mt-2">¡Reserva ahora!</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours Y Viajes</h4>
                             <h1 class="display-3 text-white mb-md-4">Viaja seguro, comodo y facil</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">¡Reserva ahora!</a>
+                            <a href="Viajes.php" class="btn btn-primary py-md-3 px-md-5 mt-2">¡Reserva ahora!</a>
                         </div>
                     </div>
                 </div>
@@ -78,20 +78,24 @@
     <!-- Carousel End -->
 
 
-    <!-- Booking Start -->
-    <div class="container-fluid booking mt-5 pb-5">
+<!-- Booking Start -->
+<div class="container-fluid booking mt-5 pb-5">
         <div class="container pb-5">
             <div class="bg-light shadow" style="padding: 30px;">
                 <div class="row align-items-center" style="min-height: 60px;">
                     <div class="col-md-10">
                         <div class="row">
-                            <div class="col-md-3">
+                        <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
                                     <select class="custom-select px-4" style="height: 47px;">
                                         <option selected>Destinos</option>
-                                        <option value="1">Guanacaste</option>
-                                        <option value="2">Puntarenas</option>
-                                        <option value="3">San Carlos</option>
+                                        <option value="1">San José</option>
+                                        <option value="2">Alajuela</option>
+                                        <option value="3">Cartago</option>
+                                        <option value="4">Heredia</option>
+                                        <option value="5">Guanacaste</option>
+                                        <option value="6">Puntarenas</option>
+                                        <option value="7">Limon</option>
                                     </select>
                                 </div>
                             </div>
@@ -109,16 +113,6 @@
                                         <input type="text" class="form-control p-4 datetimepicker-input"
                                             placeholder="Salida" data-target="#date2" data-toggle="datetimepicker" />
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Destinos</option>
-                                        <option value="1">Guanacaste</option>
-                                        <option value="2">Puntarenas</option>
-                                        <option value="3">San Carlos</option>
-                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -518,48 +512,44 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonial</h6>
-                <h1>What Say Our Clients</h1>
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonios</h6>
+                <h1>Lo que opinan nuestros clientes</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
                 <div class="text-center pb-4">
                     <img class="img-fluid mx-auto" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
-                            eos labore diam
+                        <p class="mt-5">Lo pase excelente en el viaje que realicé a Guanacaste con ViajesABC, conocí lugares asombrosos, los recomiento mucho.
                         </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="text-truncate">Marco Nuñez</h5>
+                        <span>Ingeniero</span>
                     </div>
                 </div>
                 <div class="text-center">
                     <img class="img-fluid mx-auto" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
-                            eos labore diam
+                        <p class="mt-5">Me encanto el trato que nos dieron super puntales y amigables, lo pase excelente de viaje con mis amigas en Puntarenas.
                         </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="text-truncate">Sofia Guevara</h5>
+                        <span>Administradora</span>
                     </div>
                 </div>
                 <div class="text-center">
                     <img class="img-fluid mx-auto" src="img/testimonial-3.jpg" style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
-                            eos labore diam
+                        <p class="mt-5">Fui con mi sobrino de viaje por su cumpleaños, los amigos de ViajesABC resolvieron todo por mi, un éxito.
                         </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="text-truncate">Carlos Fernandez</h5>
+                        <span>Profesor</span>
                     </div>
                 </div>
                 <div class="text-center">
                     <img class="img-fluid mx-auto" src="img/testimonial-4.jpg" style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
-                            eos labore diam
+                        <p class="mt-5">Viene a Costa Rica por vacaciones y nunca pense que seria tan fácil conocer tantos destinos, gracias ViajesABC.
                         </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="text-truncate">Patrick Johnson</h5>
+                        <span>Deportista</span>
                     </div>
                 </div>
             </div>
