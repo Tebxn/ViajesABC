@@ -19,7 +19,6 @@ function ConsultarUsuariosModel() {
     oci_close($conn);
 
     return $usuarios;
-
 }
 
 function ConsultarUsuarioModel($USUARIO_ID) {
@@ -43,9 +42,7 @@ function ConsultarUsuarioModel($USUARIO_ID) {
     oci_close($conn);
 
     return $usuario;
-
 }
-
 
 function CrearUsuarioModel($email, $contrasena, $nombre, $tipoUsuario) {
     // Se establece la conexión a la base de datos
@@ -97,7 +94,6 @@ function InactivarUsuarioModel($USUARIO_ID) {
 
     oci_free_statement($stmt);
     oci_close($conn);
-
 }
 
 
