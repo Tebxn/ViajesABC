@@ -9,7 +9,7 @@
     
     foreach ($actividades as $actividad){
         echo '<tr>';
-            echo '<td>' . $actividad['NOMBRE'] . '</td>';
+            echo '<td>' . $actividad['NOMBRE_ACTIVIDAD'] . '</td>';
             echo '<td>' . $actividad['DESCRIPCION'] . '</td>';
             echo '<td>' . $actividad['PRECIO'] . '</td>';
             echo "<td><a href='../Views/actualizarActividad.php?q=" . $actividad['ACTIVIDAD_ID'] . "'>Actualizar</a> | 
@@ -34,11 +34,11 @@
     {
     
     $ACTIVIDAD_ID = $_POST["actividad_id"];
-    $NOMBRE = $_POST["nombre"];
+    $NOMBRE_ACTIVIDAD = $_POST["nombre"];
     $DESCRIPCION = $_POST["descripcion"];
     $PRECIO = $_POST["precio"];
 
-    $respuesta = ActualizarActividadModel($ACTIVIDAD_ID, $NOMBRE, $DESCRIPCION, $PRECIO);
+    $respuesta = ActualizarActividadModel($ACTIVIDAD_ID, $NOMBRE_ACTIVIDAD, $DESCRIPCION, $PRECIO);
     
     header("Location: ../Views/Actividades.php");
 
@@ -46,11 +46,11 @@
 
 if(isset($_POST["btnAgregarActividad"]))
 {
-    $NOMBRE = $_POST['nombre'];
+    $NOMBRE_ACTIVIDAD = $_POST['nombre'];
     $DESCRIPCION = $_POST['descripcion'];
     $PRECIO = $_POST['precio'];
 
-    $respuesta = CrearActividadModel($NOMBRE, $DESCRIPCION, $PRECIO);
+    $respuesta = CrearActividadModel($NOMBRE_ACTIVIDAD, $DESCRIPCION, $PRECIO);
 
     header("Location: ../Views/Actividades.php");
 

@@ -5,7 +5,7 @@ function ConsultarActividadesModel() {
 
     $conn = conectar();
 
-    $query = "SELECT ACTIVIDAD_ID, NOMBRE, DESCRIPCION, PRECIO FROM ACTIVIDAD";
+    $query = "SELECT ACTIVIDAD_ID, NOMBRE_ACTIVIDAD, DESCRIPCION, PRECIO FROM ACTIVIDAD";
     $result = oci_parse($conn, $query);
     oci_execute($result);
 
@@ -47,14 +47,14 @@ function ConsultarActividadModel($ACTIVIDAD_ID) {
 
 }
 
-function ActualizarActividadModel($ACTIVIDAD_ID, $NOMBRE, $DESCRIPCION, $PRECIO)
+function ActualizarActividadModel($ACTIVIDAD_ID, $NOMBRE_ACTIVIDAD, $DESCRIPCION, $PRECIO)
 
 {
     $conn = conectar();
-    $stmt = oci_parse($conn, "BEGIN ActualizarActividad(:pACTIVIDAD_ID, :pNOMBRE, :pDESCRIPCION, :pPRECIO); END;");
+    $stmt = oci_parse($conn, "BEGIN ActualizarActividad(:pACTIVIDAD_ID, :pNOMBRE_ACTIVIDAD, :pDESCRIPCION, :pPRECIO); END;");
 
     oci_bind_by_name($stmt, ':pACTIVIDAD_ID', $ACTIVIDAD_ID);
-    oci_bind_by_name($stmt, ':pNOMBRE', $NOMBRE, 255);
+    oci_bind_by_name($stmt, ':pNOMBRE_ACTIVIDAD', $NOMBRE_ACTIVIDAD, 255);
     oci_bind_by_name($stmt, ':pDESCRIPCION', $DESCRIPCION, 255);
     oci_bind_by_name($stmt, ':pPRECIO', $PRECIO, 255);
 
@@ -66,13 +66,13 @@ function ActualizarActividadModel($ACTIVIDAD_ID, $NOMBRE, $DESCRIPCION, $PRECIO)
 }
 
 
-function CrearActividadModel($NOMBRE, $DESCRIPCION, $PRECIO) {
+function CrearActividadModel($NOMBRE_ACTIVIDAD, $DESCRIPCION, $PRECIO) {
   
     $conn = conectar();
 
-    $stmt = oci_parse($conn, 'BEGIN INSERTAR_ACTIVIDAD(:pNOMBRE, :pDESCRIPCION,:pPRECIO); END;');
+    $stmt = oci_parse($conn, 'BEGIN INSERTAR_ACTIVIDAD(:pNOMBRE_ACTIVIDAD, :pDESCRIPCION,:pPRECIO); END;');
 
-    oci_bind_by_name($stmt, ':pNOMBRE', $NOMBRE, 70);
+    oci_bind_by_name($stmt, ':pNOMBRE_ACTIVIDAD', $NOMBRE_ACTIVIDAD, 70);
     oci_bind_by_name($stmt, ':pDESCRIPCION', $DESCRIPCION, 255);
     oci_bind_by_name($stmt, ':pPRECIO', $PRECIO, 10);
 

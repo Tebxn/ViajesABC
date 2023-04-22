@@ -67,7 +67,7 @@
                                         <a href="Usuarios.php" class="dropdown-item">Usuarios</a>
                                         <a href="Actividades.php" class="dropdown-item">Actividades</a>
                                         <a href="Transporte.php" class="dropdown-item">Transporte</a>
-                                        <a href="package.php" class="dropdown-item">Tours</a>
+                                        <a href="Tours.php" class="dropdown-item">Tours</a>
                                       
                                     </div>
                                 </div>

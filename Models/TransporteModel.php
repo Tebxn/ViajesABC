@@ -5,7 +5,7 @@ function ConsultarTransportesModel() {
 
     $conn = conectar();
 
-    $query = "SELECT TRANSPORTE_ID, NOMBRE, EMAIL, TELEFONO FROM TRANSPORTE";
+    $query = "SELECT TRANSPORTE_ID, NOMBRE_TRANSPORTE, EMAIL, TELEFONO FROM TRANSPORTE";
     $result = oci_parse($conn, $query);
     oci_execute($result);
 
@@ -45,14 +45,14 @@ function ConsultarTransporteModel($TRANSPORTE_ID) {
 
 }
 
-function ActualizarTransporteModel($TRANSPORTE_ID, $NOMBRE, $EMAIL, $TELEFONO)
+function ActualizarTransporteModel($TRANSPORTE_ID, $NOMBRE_TRANSPORTE, $EMAIL, $TELEFONO)
 
 {
     $conn = conectar();
-    $stmt = oci_parse($conn, "BEGIN actualizar_transporte(:pTRANSPORTE_ID, :pNOMBRE, :pEMAIL, :pTELEFONO); END;");
+    $stmt = oci_parse($conn, "BEGIN actualizar_transporte(:pTRANSPORTE_ID, :pNOMBRE_TRANSPORTE, :pEMAIL, :pTELEFONO); END;");
 
     oci_bind_by_name($stmt, ':pTRANSPORTE_ID', $TRANSPORTE_ID);
-    oci_bind_by_name($stmt, ':pNOMBRE', $NOMBRE, 255);
+    oci_bind_by_name($stmt, ':pNOMBRE_TRANSPORTE', $NOMBRE_TRANSPORTE, 255);
     oci_bind_by_name($stmt, ':pEMAIL', $EMAIL, 255);
     oci_bind_by_name($stmt, ':pTELEFONO', $TELEFONO, 255);
 
@@ -75,13 +75,13 @@ function EliminarTransporteModel($TRANSPORTE_ID) {
 }
 
 
-function CrearTransporteModel($NOMBRE, $EMAIL, $TELEFONO) {
+function CrearTransporteModel($NOMBRE_TRANSPORTE, $EMAIL, $TELEFONO) {
   
     $conn = conectar();
 
-    $stmt = oci_parse($conn, 'BEGIN INSERTAR_TRANSPORTE(:pNOMBRE, :pEMAIL,:pTELEFONO); END;');
+    $stmt = oci_parse($conn, 'BEGIN INSERTAR_TRANSPORTE(:pNOMBRE_TRANSPORTE, :pEMAIL,:pTELEFONO); END;');
 
-    oci_bind_by_name($stmt, ':pNOMBRE', $NOMBRE, 70);
+    oci_bind_by_name($stmt, ':pNOMBRE_TRANSPORTE', $NOMBRE_TRANSPORTE, 70);
     oci_bind_by_name($stmt, ':pEMAIL', $EMAIL, 30);
     oci_bind_by_name($stmt, ':pTELEFONO', $TELEFONO, 255);
 
