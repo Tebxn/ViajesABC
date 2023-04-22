@@ -70,6 +70,14 @@
                                             name="actividad" readOnly="true" value="<?php echo $datos["NOMBRE_ACTIVIDAD"] ?>">
                                            
                                     </div>
+
+
+                                    <div class="form-group">
+                                      
+                                        <input type="hidden" class="form-control" id="actividad_id"
+                                            name="actividad_id" readOnly="true" value="<?php echo $datos["ACTIVIDAD_ID"] ?>">
+                                           
+                                    </div>
                                 </div>
                                 
                                 <div class="col-md-4">
@@ -78,12 +86,24 @@
                                             <input type="text" class="form-control" id="proveedor"
                                             name="proveedor" readOnly="true" value="<?php echo $datos["NOMBRE_PROVEEDOR"] ?>" >
                                     </div>
+
+                                    <div class="form-group">
+                                     
+                                            <input type="hidden" class="form-control" id="proveedor_id"
+                                            name="proveedor_id" readOnly="true" value="<?php echo $datos["PROVEEDOR_ID"] ?>" >
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>TRANSPORTE</label>
+                                        <label>Transporte</label>
                                             <input type="text" class="form-control" id="transporte"
                                             name="transporte" readOnly="true" value="<?php echo $datos["NOMBRE_TRANSPORTE"] ?>" >
+                                    </div>
+
+                                    <div class="form-group">
+                                        
+                                            <input type="hidden" class="form-control" id="transporte_id"
+                                            name="transporte_id" readOnly="true" value="<?php echo $datos["TRANSPORTE_ID"] ?>" >
                                     </div>
                                 </div>
                          </div>
@@ -103,6 +123,12 @@
                                         <label>Provincia</label>
                                         <input type="text" class="form-control" id="provincia"
                                             name="provincia" readOnly="true" value="<?php echo $datos["NOMBRE_PROVINCIA"] ?>">
+                                    </div>
+
+                                    <div class="form-group">
+                                        
+                                        <input type="hidden" class="form-control" id="provincia_id"
+                                            name="provincia_id" readOnly="true" value="<?php echo $datos["PROVINCIA_ID"] ?>">
                                     </div>
                                 </div>
 
