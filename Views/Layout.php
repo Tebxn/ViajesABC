@@ -6,12 +6,12 @@
       session_start();
     }
 
-
-    //esto no funciona al 100%, deberia si la variable de sesion es diferente a vacia mostrar el header de visitante y si esta llena mostrar el de cliente o admin
     function mostrarNavbar()
     {
-        if(session_status() == PHP_SESSION_ACTIVE)
+        if($_SESSION["email"] == null)
         {
+            header("Location: ../Views/login.php");
+        }
             echo '
             <div class="container-fluid bg-light pt-3 d-none d-lg-block">
             <div class="container">
@@ -49,7 +49,7 @@
             <div class="container-fluid position-relative nav-bar p-0">
                 <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
                     <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-                        <a href="" class="navbar-brand">
+                        <a href="Home.php" class="navbar-brand">
                             <h1 class="m-0 text-primary"><span class="text-dark">Viajes</span>ABC</h1>
                         </a>
                         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -60,6 +60,21 @@
                                 <a href="home.php" class="nav-item nav-link active">Inicio</a>
                                 <a href="about.php" class="nav-item nav-link">Sobre Nosotros</a>
                                 
+                                
+                                <a href="contact.php" class="nav-item nav-link">Contactenos</a>';
+if(session_status() == PHP_SESSION_ACTIVE)
+{
+    echo'
+<!--CIERRE DE SESION-->
+                                <form action="" method="post">
+                                    <input type="submit" class="nav-item nav-link" id="btnCerrarSesion" name="btnCerrarSesion" value="Cerrar Sesion"
+                                    style="background-color: transparent; border: 0px;"/>
+                                </form>
+<!--END CIERRE DE SESION-->';
+
+if($_SESSION["tipoUsuario"] == "1"){
+        echo'
+<!--ADMINISTRATIVO-->
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Servicios (Admin)</a>
                                     <div class="dropdown-menu border-0 rounded-0 m-0">
@@ -71,87 +86,17 @@
                                       
                                     </div>
                                 </div>
-                                <a href="contact.php" class="nav-item nav-link">Contactenos</a>
-                                <a href="Login.php" class="nav-item nav-link">Login</a>
-                                <form action="" method="post">
-                                    <input type="submit" class="nav-item nav-link" id="btnCerrarSesion" name="btnCerrarSesion" value="Cerrar Sesion"
-                                    style="background-color: transparent; border: 0px;"/>
-                                </form>
+<!--END ADMINISTRATIVO-->';
+    }
+
+echo'
+
                             </div>
                         </div>
                     </nav>
                 </div>
             </div> '; 
-        }else{   
-            echo '
-            <div class="container-fluid bg-light pt-3 d-none d-lg-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                        <div class="d-inline-flex align-items-center">
-                            <p><i class="fa fa-envelope mr-2"></i>info@viajesabc.com</p>
-                            <p class="text-body px-3">|</p>
-                            <p><i class="fa fa-phone-alt mr-2"></i>+506 0000 0000</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-center text-lg-right">
-                        <div class="d-inline-flex align-items-center">
-                            <a class="text-primary px-3" href="">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a class="text-primary px-3" href="">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a class="text-primary px-3" href="">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a class="text-primary px-3" href="">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a class="text-primary pl-3" href="">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-            <div class="container-fluid position-relative nav-bar p-0">
-                <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-                    <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-                        <a href="" class="navbar-brand">
-                            <h1 class="m-0 text-primary"><span class="text-dark">Viajes</span>ABC</h1>
-                        </a>
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                            <div class="navbar-nav ml-auto py-0">
-                                <a href="home.php" class="nav-item nav-link active">Inicio</a>
-                                <a href="about.php" class="nav-item nav-link">Sobre Nosotros</a>
-                                <a href="service.php" class="nav-item nav-link">Servicios</a>
-                                <a href="package.php" class="nav-item nav-link">Paquetes de tour</a>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Paginas</a>
-                                    <div class="dropdown-menu border-0 rounded-0 m-0">
-                                        <a href="blog.php" class="dropdown-item">Blog</a>
-                                        <a href="single.php" class="dropdown-item">Detalles de blog</a>
-                                        <a href="destination.php" class="dropdown-item">Destinos</a>
-                                        <a href="guide.php" class="dropdown-item">Guias al viajero</a>
-                                        <a href="testimonial.php" class="dropdown-item">Testimonios</a>
-                                    </div>
-                                </div>
-                                <a href="contact.php" class="nav-item nav-link">Contactenos</a>
-                                <form action="" method="post">
-                                    <input type="submit" class="nav-item nav-link" id="btnCerrarSesion" name="btnCerrarSesion" value="Cerrar Sesion"
-                                    style="background-color: transparent; border: 0px;"/>
-                                </form>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div> '; 
+            
         }
     }
         

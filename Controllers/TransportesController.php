@@ -1,6 +1,9 @@
 <?php
     include_once '../Models/TransporteModel.php';
-
+    if (session_status() == PHP_SESSION_NONE)
+    {
+        session_start();
+    }
 
 function ConsultarTransportes() //TODOS
 {

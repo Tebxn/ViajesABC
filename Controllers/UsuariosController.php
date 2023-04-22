@@ -1,6 +1,10 @@
 <?php
     include_once '../Models/UsuariosModel.php';
-
+    if (session_status() == PHP_SESSION_NONE)
+    {
+        session_start();
+    }
+    
 function ConsultarUsuarios() //TODOS
 {
 
