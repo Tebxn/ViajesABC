@@ -67,7 +67,7 @@
                             <p><strong>Transporte por: </strong> <?php echo $datos["NOMBRE_TRANSPORTE"] ?></p>
 
                             <form action="" method="post">
-                                <input type="hidden" name="idTour" id="idTour">
+                                <input type="hidden" name="idTour" id="idTour" value="<?php echo $datos["TOUR_ID"] ?>">
                                 <input type='submit' class='btn btn-primary mt-1' 
                                 id='btnReservar' name='btnReservar' value='Reservar'/>
                             </form>

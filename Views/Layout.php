@@ -59,18 +59,16 @@
                             <div class="navbar-nav ml-auto py-0">
                                 <a href="home.php" class="nav-item nav-link active">Inicio</a>
                                 <a href="about.php" class="nav-item nav-link">Sobre Nosotros</a>
-                                
-                                <a href="MisReservas.php?q='.$_SESSION['usuario_id'].'" class="nav-item nav-link">Mis Reservas</a>
-                                <a href="contact.php" class="nav-item nav-link">Contactenos</a>';
-if(session_status() == PHP_SESSION_ACTIVE)
-{
-    echo'
-<!--CIERRE DE SESION-->
-                                <form action="" method="post">
-                                    <input type="submit" class="nav-item nav-link" id="btnCerrarSesion" name="btnCerrarSesion" value="Cerrar Sesion"
-                                    style="background-color: transparent; border: 0px;"/>
-                                </form>
-<!--END CIERRE DE SESION-->';
+                                <a href="contact.php" class="nav-item nav-link">Contactenos</a>
+<!--MIS RESERVAS-->
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Perfil</a>
+                                    <div class="dropdown-menu border-0 rounded-0 m-0">
+                                    <a href="MisReservas.php?q='.$_SESSION['usuario_id'].'" class="nav-item nav-link">Mis Reservas</a>
+                                    </div>
+                                </div>
+<!--END MIS RESERVAS-->';
+
 
 if($_SESSION["tipoUsuario"] == "1"){
         echo'
@@ -87,8 +85,16 @@ if($_SESSION["tipoUsuario"] == "1"){
                                     </div>
                                 </div>
 <!--END ADMINISTRATIVO-->';
-    }
-
+}    
+if(session_status() == PHP_SESSION_ACTIVE){
+        echo'
+    <!--CIERRE DE SESION-->
+                                    <form action="" method="post">
+                                        <input type="submit" class="nav-item nav-link" id="btnCerrarSesion" name="btnCerrarSesion" value="Cerrar Sesion"
+                                        style="background-color: transparent; border: 0px;"/>
+                                    </form>
+    <!--END CIERRE DE SESION-->';
+}
 echo'
 
                             </div>
@@ -97,9 +103,7 @@ echo'
                 </div>
             </div> '; 
             
-        }
-    }
-        
+}        
     
         function mostrarFooter()
         {

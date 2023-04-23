@@ -1,6 +1,9 @@
 <?php
     include_once 'Layout.php';
     include_once '../Controllers/TourController.php';
+    $provincia = $_GET['provincia'];
+    $fecha = $_GET['fecha1'];
+    $fecha2 = $_GET['fecha2'];
 ?>
 
 <!DOCTYPE html>
@@ -86,9 +89,9 @@
                     <div class="col-md-12">
                         <form action="" method="post">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="mb-3 mb-md-0">
-                                        <select class="custom-select px-4" name="destino" style="height: 47px;">
+                                        <select class="custom-select px-4" style="height: 47px;">
                                             <option selected>Destinos</option>
                                             <option value="1">San José</option>
                                             <option value="2">Alajuela</option>
@@ -100,21 +103,15 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date1"  data-target-input="nearest">
-                                        <input type="text" name="date1" class="form-control p-4 datetimepicker-input" placeholder="Entre" data-target="#date1" data-toggle="datetimepicker"/>
+                                <div class="col-md-4">
+                                    <div class="mb-3 mb-md-0">
+                                        <div class="date" id="date1" name="date1" data-target-input="nearest">
+                                            <input type="text" class="form-control p-4 datetimepicker-input"
+                                                placeholder="Fecha" data-target="#date1" data-toggle="datetimepicker" />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date2"  data-target-input="nearest">
-                                        <input type="text" name="date2" class="form-control p-4 datetimepicker-input" placeholder="Hasta" data-target="#date2" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <input class="btn btn-primary btn-block" type="submit" name="btnBusquedaTour" id="btnBusquedaTour" value="Buscar"
                                         style="height: 47px; margin-top: -2px;"/>
                                 </div>
@@ -132,7 +129,7 @@
         <div class="container pt-5 pb-3">
             <div class="row">
                 <?php
-                    ConsultarToursCards();
+                    ConsultarToursCardsFiltro($provincia,$fecha,$fecha2);
                 ?>
             </div>
         </div>

@@ -6,10 +6,12 @@ if (session_status() == PHP_SESSION_NONE)
     session_start();
 }
 if(isset($_POST["btnReservar"])){
+
     $tourId = $_POST['idTour'];
     $usuarioId = $_SESSION['usuario_id'];
     CrearReservaModel($usuarioId, $tourId);
-    header("Location: ../Views/MisReservas.php");
+
+    header("Location: ../Views/MisReservas.php?q=".$_SESSION['usuario_id']."");
 }
 
 if(isset($_POST["btnEliminarReserva"])){
@@ -18,7 +20,7 @@ if(isset($_POST["btnEliminarReserva"])){
     $usuarioId = $_SESSION['usuario_id'];
 
     EliminarReservaModel($usuarioId, $tourId);
-    header("Location: ../Views/MisReservas.php?q=$usuarioId");
+    header("Location: ../Views/MisReservas.php?q=".$_SESSION['usuario_id']."");
 }
 
 function ConsultarReservas($usuario_id){
@@ -30,10 +32,12 @@ function ConsultarReservas($usuario_id){
             echo '<td>' . $reserva['NOMBRE_TOUR'] . '</td>';
             echo '<td>' . $reserva['FECHA'] . '</td>';
             echo '<td><a href="../Views/single.php?q=' . $reserva['TOURS'] . '">Ver Informacion</a></td>';
-            echo  ' <td><form action="" method="post">
-                    <input type="hidden" name="idTour"/>
+            echo  ' <td>
+            <form action="" method="post">
+                    <input type="hidden" name="idTour" value="'.$reserva['TOURS'].'"/>
                     <input type="submit" id="btnEliminarReserva" name="btnEliminarReserva" class="btn btn-transparent" value="Cancelar Reserva"/>
-                    </form></td>
+            </form>
+                    </td>
                  </td>';
         echo '</tr>';
     }

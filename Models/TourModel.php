@@ -137,4 +137,38 @@ function ConsultarToursCardsModel() {
 
     return $tours;
 }
+
+function ConsultarToursCardsFiltroModel($provincia, $fecha, $fecha2) {
+
+    $conn = conectar();
+
+    $query = "SELECT      
+    TOUR_ID,
+    TOUR.NOMBRE_TOUR,
+    PROVINCIA.NOMBRE_PROVINCIA,
+    TOUR.FECHA,
+    ACTIVIDAD.NOMBRE_ACTIVIDAD,
+    PROVINCIA.PROVINCIA_ID,
+    TOUR.IMAGENURL
+FROM TOUR
+INNER JOIN PROVINCIA ON TOUR.PROVINCIA = PROVINCIA.PROVINCIA_ID
+INNER JOIN ACTIVIDAD ON TOUR.ACTIVIDAD = ACTIVIDAD.ACTIVIDAD_ID
+WHERE TOUR.PROVINCIA = :pProvincia AND FECHA >= TO_DATE(:pFecha, 'MM/DD/YYYY') AND FECHA <= TO_DATE(:pFecha2, 'MM/DD/YYYY');";
+
+    $result = oci_parse($conn, $query);
+    oci_bind_by_name($result, ":pProvincia", $provincia);
+    oci_bind_by_name($result, ":pFecha", $fecha);
+    oci_bind_by_name($result, ":pFecha2", $fecha2);
+    oci_execute($result);
+
+    $tours = array();
+    while ($row = oci_fetch_assoc($result)) {
+        $tours[] = $row;
+    }
+
+    oci_free_statement($result);
+    oci_close($conn);
+
+    return $tours;
+}
 ?>
