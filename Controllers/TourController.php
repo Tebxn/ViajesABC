@@ -100,16 +100,15 @@ if(isset($_POST["btnEliminarTour"])) {
 
 if(isset($_POST["btnAgregarTour"]))
 {
-    $TOUR_ID = $_POST["tour_id"];
-    $NOMBRE_TOUR = $_POST["nombre"];
-    $PROVEEDOR = $_POST["proveedor_id"];
-    $PROVINCIA = $_POST["provincia_id"];
-    $TRANSPORTE = $_POST["transporte_id"];
-    $FECHA = $_POST["fecha"];
-    $ACTIVIDAD = $_POST["actividad_id"];
-    $DIRECCION = $_POST["direccion_id"];
+    $nombre = $_POST["nombre"];
+    $proveedor = $_POST["proveedor"];
+    $actividad = $_POST["actividad"];
+    $direccion = $_POST["direccion"];
+    $provincia = $_POST["provincia"];
+    $transporte = $_POST["transporte"];
+    $fecha = $_POST["fecha"];
 
-    $respuesta = CrearTourModel($TOUR_ID, $NOMBRE_TOUR,$PROVEEDOR,$PROVINCIA,$TRANSPORTE, $FECHA, $ACTIVIDAD, $DIRECCION);
+    $respuesta = CrearTourModel($nombre, $proveedor,$actividad,$direccion,$provincia, $transporte, $fecha);
 
     header("Location: ../Views/Tours.php");
 

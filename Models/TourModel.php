@@ -81,25 +81,31 @@ function EliminarTourModel($TOUR_ID) {
     oci_close($conn);
 }
 
-function CrearTourModel($NOMBRE_TOUR, $PROVEEDOR, $PROVINCIA,$TRANSPORTE,$FECHA,$ACTIVIDAD,$DIRECCION) {
+function CrearTourModel() {
   
     $conn = conectar();
 
-    $stmt = oci_parse($conn, 'BEGIN INSERTAR_TOUR(:pNOMBRE_TOUR, :pPROVEEDOR,:pPROVINCIA, :pTRANSPORTE, :pFECHA,
-    :pACTIVIDAD, :pDIRECCION); END;');
+    $sql = "INSERT INTO TOUR (NOMBRE_TOUR, PROVEEDOR, ACTIVIDAD, DIRECCION, PROVINCIA, TRANSPORTE, FECHA)
+        VALUES (:nombre, :proveedor, :actividad, :direccion, :provincia, :transporte, :fecha)";
 
-    oci_bind_by_name($stmt, ':pNOMBRE_TOUR', $NOMBRE_TOUR, 70);
-    oci_bind_by_name($stmt, ':pPROVEEDOR', $PROVEEDOR, 30);
-    oci_bind_by_name($stmt, ':pPROVINCIA', $PROVINCIA, 30);
-    oci_bind_by_name($stmt, ':pTRANSPORTE', $TRANSPORTE, 30);
-    oci_bind_by_name($stmt, ':pFECHA', $FECHA, 30);
-    oci_bind_by_name($stmt, ':pACTIVIDAD', $ACTIVIDAD, 30);
-    oci_bind_by_name($stmt, ':pDIRECCION', $DIRECCION, 255);
+    // Preparar la consulta SQL
+    $stmt = oci_parse($conn, $sql);
 
+    // Asignar los valores a los parámetros de la consulta
+    oci_bind_by_name($stmt, ':nombre', $nombre);
+    oci_bind_by_name($stmt, ':proveedor', $proveedor);
+    oci_bind_by_name($stmt, ':actividad', $actividad);
+    oci_bind_by_name($stmt, ':direccion', $direccion);
+    oci_bind_by_name($stmt, ':provincia', $provincia);
+    oci_bind_by_name($stmt, ':transporte', $transporte);
+    oci_bind_by_name($stmt, ':fecha', $fecha);
 
-    oci_execute($stmt);
-    
-    oci_free_statement($stmt);
+    // Ejecutar la consulta
+    if (oci_execute($stmt)) {
+    echo "El tour ha sido agregado correctamente";
+    } else {
+    echo "Ha ocurrido un error al agregar el tour";
+    }
     oci_close($conn);
 }
 
