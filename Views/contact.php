@@ -109,8 +109,8 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contact</h6>
-                <h1>Contact For Any Query</h1>
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contacto</h6>
+                <h1>Comunicate con nosotros para lo que necesites</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -119,29 +119,29 @@
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
-                                        required="required" data-validation-required-message="Please enter your name" />
+                                    <input type="text" class="form-control p-4" id="name" placeholder="Tu Nombre"
+                                        required="required" data-validation-required-message="Por favor ingrese su nombre" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
-                                        required="required" data-validation-required-message="Please enter your email" />
+                                    <input type="email" class="form-control p-4" id="email" placeholder="Tu Email"
+                                        required="required" data-validation-required-message="Por favor ingrese su email" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control p-4" id="subject" placeholder="Asunto"
+                                    required="required" data-validation-required-message="Por favor ingrese el asunto" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
+                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Mensaje"
                                     required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
+                                    data-validation-required-message="Por favor ingrese un mensaje"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Send Message</button>
+                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Enviar mensaje</button>
                             </div>
                         </form>
                     </div>
