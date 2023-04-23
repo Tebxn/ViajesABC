@@ -33,7 +33,6 @@ function ConsultarUsuario($USUARIO_ID) {
 }
 
 
-
 if(isset($_POST["btnAgregarUsuario"]))
 {
     $email = $_POST['email'];

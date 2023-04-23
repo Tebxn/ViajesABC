@@ -60,7 +60,7 @@
                                 <a href="home.php" class="nav-item nav-link active">Inicio</a>
                                 <a href="about.php" class="nav-item nav-link">Sobre Nosotros</a>
                                 
-                                
+                                <a href="MisReservas.php?q='.$_SESSION['usuario_id'].'" class="nav-item nav-link">Mis Reservas</a>
                                 <a href="contact.php" class="nav-item nav-link">Contactenos</a>';
 if(session_status() == PHP_SESSION_ACTIVE)
 {

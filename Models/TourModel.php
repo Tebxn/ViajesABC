@@ -136,7 +136,5 @@ function ConsultarToursCardsModel() {
     oci_close($conn);
 
     return $tours;
-    return $tours;
-
 }
 ?>

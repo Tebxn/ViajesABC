@@ -1,6 +1,7 @@
 <?php
     include_once 'Layout.php';
     include_once '../Controllers/TourController.php';
+    include_once '../Controllers/ReservasController.php';
     $datos = ConsultarTour($_GET["q"]);
 ?>
 
@@ -57,13 +58,19 @@
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Viajes</a>
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href=""><?php echo $datos["NOMBRE_TOUR"] ?></a>
-                                <small class="text-white text-uppercase"><?php echo $datos["NOMBRE_PROVINCIA"] ?></small>
+  
                             </div>
                             <h2 class="mb-3"><?php echo $datos["NOMBRE_TOUR"] ?></h2>
-                            <p><?php echo $datos["NOMBRE_ACTIVIDAD"] ?></p>
+                            <p><strong>Provincia: </strong><?php echo $datos["NOMBRE_PROVINCIA"] ?></p>
+                            <p><strong>Direccion Exacta: </strong><?php echo $datos["DIRECCION"] ?></p>
+                            <p><strong>Actividad Principal: </strong><?php echo $datos["NOMBRE_ACTIVIDAD"] ?></p>
+                            <p><strong>Transporte por: </strong> <?php echo $datos["NOMBRE_TRANSPORTE"] ?></p>
 
-                            <input type='submit' class='btn btn-primary mt-1' 
-                            id='btnReservar' name='btnReservar' value='Reservar'/>
+                            <form action="" method="post">
+                                <input type="hidden" name="idTour" id="idTour">
+                                <input type='submit' class='btn btn-primary mt-1' 
+                                id='btnReservar' name='btnReservar' value='Reservar'/>
+                            </form>
                         </div>
                     </div>
                     <!-- Blog Detail End -->
