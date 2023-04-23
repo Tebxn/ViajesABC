@@ -6,7 +6,7 @@ function ConsultarToursModel() {
     $conn = conectar();
 
     $query = "SELECT TOUR_ID, NOMBRE_TOUR, PROVEEDOR, PROVINCIA ,TRANSPORTE, FECHA,
-    DIRECCION FROM TOUR";
+    DIRECCION, IMAGENURL FROM TOUR";
 
     $result = oci_parse($conn, $query);
     oci_execute($result);
@@ -44,7 +44,6 @@ function ConsultarTourModel($TOUR_ID) {
     oci_close($conn);
 
     return $tour;
-
 }
 
 function ActualizarTourModel($TOUR_ID, $NOMBRE_TOUR,$PROVEEDOR,$PROVINCIA,$TRANSPORTE, $FECHA,$ACTIVIDAD, $DIRECCION )

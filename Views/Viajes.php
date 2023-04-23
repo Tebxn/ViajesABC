@@ -78,53 +78,46 @@
     </div>
     <!-- Carousel End -->
 
-
     <!-- Booking Start -->
     <div class="container-fluid booking mt-5 pb-5">
         <div class="container pb-5">
             <div class="bg-light shadow" style="padding: 30px;">
                 <div class="row align-items-center" style="min-height: 60px;">
-                    <div class="col-md-10">
-                        <div class="row">
-                        <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Destinos</option>
-                                        <option value="1">San José</option>
-                                        <option value="2">Alajuela</option>
-                                        <option value="3">Cartago</option>
-                                        <option value="4">Heredia</option>
-                                        <option value="5">Guanacaste</option>
-                                        <option value="6">Puntarenas</option>
-                                        <option value="7">Limon</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input"
-                                            placeholder="LLegada" data-target="#date1" data-toggle="datetimepicker" />
+                    <div class="col-md-12">
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mb-3 mb-md-0">
+                                        <select class="custom-select px-4" style="height: 47px;">
+                                            <option selected>Destinos</option>
+                                            <option value="1">San José</option>
+                                            <option value="2">Alajuela</option>
+                                            <option value="3">Cartago</option>
+                                            <option value="4">Heredia</option>
+                                            <option value="5">Guanacaste</option>
+                                            <option value="6">Puntarenas</option>
+                                            <option value="7">Limon</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input"
-                                            placeholder="Salida" data-target="#date2" data-toggle="datetimepicker" />
+                                <div class="col-md-4">
+                                    <div class="mb-3 mb-md-0">
+                                        <div class="date" id="date1" name="date1" data-target-input="nearest">
+                                            <input type="text" class="form-control p-4 datetimepicker-input"
+                                                placeholder="Fecha" data-target="#date1" data-toggle="datetimepicker" />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-primary btn-block" type="submit"
-                            style="height: 47px; margin-top: -2px;">Submit</button>
+                                <div class="col-md-4">
+                                    <input class="btn btn-primary btn-block" type="submit" name="btnBusquedaTour" id="btnBusquedaTour" value="Buscar"
+                                        style="height: 47px; margin-top: -2px;"/>
+                                </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Booking End -->
 
@@ -165,7 +158,7 @@
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script> 
+    <script src="js/main.js"></script>
 </body>
 
 </html>

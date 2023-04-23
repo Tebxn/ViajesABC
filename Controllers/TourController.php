@@ -59,11 +59,7 @@ foreach ($tours as $tour){
                     <div class='border-top mt-4 pt-4'>
                         <div class='d-flex justify-content-between'>
                             <h6 class='m-0'><i class='fa fa-star text-primary mr-2'></i>". $tour['NOMBRE_ACTIVIDAD'] ."</h6>
-                            <form action='' method='post'>
-                            <input type='hidden' value='" .$tour['TOUR_ID']. "'>
-                            <input type='submit' class='btn btn-primary mt-1' 
-                            id='btnIniciarSesion' name='btnReservar' value='Reservar'/>
-                            </form>
+                            <a href='../Views/single.php?q=" .$tour['TOUR_ID']. "' class='btn btn-primary mt-1'>Ver Más</a>
                         </div>
                     </div>
                 </div>
