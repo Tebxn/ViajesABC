@@ -80,7 +80,7 @@ function EliminarTourModel($TOUR_ID) {
     oci_close($conn);
 }
 
-function CrearTourModel() {
+function CrearTourModel($nombre,$proveedor,$actividad,$direccion,$provincia, $transporte, $fecha) {
   
     $conn = conectar();
 
